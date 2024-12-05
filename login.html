@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('fsbg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background: rgba(24, 55, 91, 0.9); /* Fresno State Blue with transparency */
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #B31B1B; /* Fresno State Red */
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #B31B1B; /* Fresno State Red */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .tabs button.active {
+            background-color: #18375B; /* Fresno State Blue */
+        }
+        .tabs button:hover {
+            background-color: #960018; /* Darker Red for hover effect */
+        }
+        .form-container {
+            display: none;
+        }
+        .form-container.active {
+            display: block;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #B31B1B; /* Fresno State Red */
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #960018; /* Darker Red for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Fresno State</h1>
+        <div class="tabs">
+            <button id="loginTab" class="active">Login</button>
+            <button id="registerTab">Register</button>
+        </div>
+        <div id="loginForm" class="form-container active">
+            <form action="login.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Enter your password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div id="registerForm" class="form-container">
+            <form action="register.php" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="username">Username:</label>
+                <input type="text" name="username" placeholder="Choose a username" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" name="password" placeholder="Choose a password" required>
+                
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginTab = document.getElementById('loginTab');
+        const registerTab = document.getElementById('registerTab');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+
+        // Event listeners for toggling forms
+        loginTab.addEventListener('click', () => {
+            loginForm.classList.add('active');
+            registerForm.classList.remove('active');
+            loginTab.classList.add('active');
+            registerTab.classList.remove('active');
+        });
+
+        registerTab.addEventListener('click', () => {
+            registerForm.classList.add('active');
+            loginForm.classList.remove('active');
+            registerTab.classList.add('active');
+            loginTab.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
