@@ -32,6 +32,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <option value="hard">Hard (16x16 grid, 40 mines)</option>
     </select>
 
+<!-- Modal -->
+	<div id="gameGuideModal" class="modal">
+		<div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>How to Play Minesweeper</h2>
+        <p>
+            1. Select a difficulty level to set the grid size and the number of mines.<br>
+            2. Left-click a square to reveal it. If it contains a mine, you lose!<br>
+            3. Numbers indicate how many mines are adjacent to that square.<br>
+            4. Right-click to flag a square if you suspect it has a mine.<br>
+            5. Clear all non-mine squares to win the game, Good luck and have fun!<br>
+        </p>
+        <button id="closeGuideButton">Start Game</button>
+		</div>
+	</div>
+
+
     <!-- Game Canvas -->
     <canvas id="board" width="300" height="300"></canvas>
     <div class="score">
@@ -72,7 +89,42 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             }
             isMusicPlaying = !isMusicPlaying;
         });
+		
+		// JavaScript to manage the modal
+	document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('gameGuideModal');
+    const closeBtn = document.querySelector('.close');
+    const startBtn = document.getElementById('closeGuideButton');
+
+    // Show the modal when the page loads
+    modal.style.display = 'block';
+
+    // Close the modal when the close button or start button is clicked
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    startBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close the modal if the user clicks outside the content area
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+		
     </script>
 </body>
+<footer>
+<p>
+All code done by Javier Escareno 300593944, To contact me please email me at jayescareno22@mail.fresnostate.edu<br>
+
+</P>
+</footer>
 </html>
+
 
