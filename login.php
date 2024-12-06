@@ -3,8 +3,8 @@ session_start();
 
 // Database configuration
 $host = 'localhost';
-$username_db = 'jayescareno22'; // Database username
-$password_db = 'password1'; // Database password
+$username_db = 'root'; // Basic Database username
+$password_db = ''; //  Basic Database password
 $database = 'minesweeper_game'; // Database name
 
 // Establish a database connection
@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
-// Basic validation
+// Basic form validation
 if (empty($email) || empty($password)) {
     die("Please fill in all fields.");
 }

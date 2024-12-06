@@ -70,7 +70,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 	<button id="toggleBackgroundButton">Toggle Background Color</button>
 
 
-    <!-- Game Scripts -->
+  
     <script src="app.js"></script>
     <script>
         const musicToggleButton = document.getElementById("musicToggleButton");
@@ -90,7 +90,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             isMusicPlaying = !isMusicPlaying;
         });
 		
-		// JavaScript to manage the modal
+		
 	document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('gameGuideModal');
     const closeBtn = document.querySelector('.close');
@@ -108,7 +108,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         modal.style.display = 'none';
     });
 
-    // Close the modal if the user clicks outside the content area
+    // Close the modal if the user clicks outside the modal
     window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';

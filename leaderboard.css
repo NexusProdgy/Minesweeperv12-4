@@ -1,29 +1,29 @@
 /* General styling for the leaderboard page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9; /* Light gray background for contrast */
+    background-color: #f4f4f9; 
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    height: 100vh; /* Full viewport height */
-    flex-direction: column; /* Stack elements vertically */
-    text-align: center; /* Center text inside the body */
-    color: #003B5C; /* Fresno State dark blue for text */
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    flex-direction: column;
+    text-align: center; 
+    color: #003B5C; 
 }
 
 /* Title of the leaderboard */
 h1 {
     font-size: 24px;
-    margin-bottom: 20px; /* Space between title and table */
-    color: #D40000; /* Fresno State red for title */
+    margin-bottom: 20px; /
+    color: #D40000; */
 }
 
 /* Container for the leaderboard table */
 table {
     width: 80%;
-    max-width: 800px; /* Maximum width of the table */
+    max-width: 800px; 
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@ table {
 
 /* Table headers */
 th {
-    background-color: #003B5C; /* Fresno State dark blue for header */
+    background-color: #003B5C; 
     color: white;
     padding: 10px;
     text-align: left;
@@ -41,7 +41,7 @@ th {
 
 /* Table rows */
 tr:nth-child(even) {
-    background-color: #f2f2f2; /* Light gray for even rows */
+    background-color: #f2f2f2; 
 }
 
 /* Table cells */
@@ -53,14 +53,14 @@ td {
 
 /* Add a hover effect for rows */
 tr:hover {
-    background-color: #D40000; /* Fresno State red on hover */
-    color: white; /* Change text color to white on hover */
+    background-color: #D40000; 
+    color: white; 
 }
 
 /* Styling for the "Back to Game" link */
 a {
     display: block;
-    background-color: #D40000; /* Fresno State red for button */
+    background-color: #D40000; 
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -73,7 +73,7 @@ a {
 }
 
 a:hover {
-    background-color: #003B5C; /* Fresno State dark blue for hover effect */
+    background-color: #003B5C; 
 }
 
 
