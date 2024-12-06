@@ -55,6 +55,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div id="best">Best Score: 0</div>
         <div id="score">Score: 0</div>
         <div id="timer">Time: 0s</div>
+		<div id="flagCounter">Flags: 0</div>
+
     </div>
     <button id="startButton">Start Game</button>
     <button id="restartButton" style="display:none;">Restart Game</button>
@@ -116,7 +118,41 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     });
 });
 
-		
+	   // JavaScript for flagging and updating flag count
+        let flagCount = 0; // Initialize flag count
+        const maxFlags = 40; // Adjust based on the number of mines
+
+        function updateFlagCounter() {
+            const flagCounter = document.getElementById("flagCounter");
+            flagCounter.textContent = "Flags: " + flagCount; // Update the flag count text
+        }
+
+        // Handle right-click for flagging cells
+        function handleRightClick(event) {
+            event.preventDefault(); // Prevent the default context menu
+
+            const rect = boardElement.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const row = Math.floor(x / cellSize);
+            const col = Math.floor(y / cellSize);
+            const cell = board[row][col];
+
+            if (cell.revealed) return; // Do nothing if the cell is already revealed
+
+            // Toggle flagged state
+            if (cell.flagged) {
+                cell.flagged = false;
+                flagCount--; // Decrement the flag count when flag is removed
+            } else if (flagCount < maxFlags) {
+                cell.flagged = true;
+                flagCount++; // Increment the flag count when flag is added
+            }
+
+            updateFlagCounter(); // Update the flag count display
+            drawBoard(); // Re-draw the board to reflect the new state
+        }	
     </script>
 </body>
 <footer>
