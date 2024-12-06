@@ -21,7 +21,7 @@ let timeElapsed = 0;
 let gameOverImage = new Image(); // Create a new image object
 
 // Set the source for the game over image
-gameOverImage.src = 'go.jpg'; // Path to the game over image
+gameOverImage.src = 'go.jpg'; 
 
 // Set difficulty based on selection
 function setDifficulty() {
@@ -315,8 +315,8 @@ function submitScore(score) {
 // Function to start or restart the game
 function startGameLogic() {
     setDifficulty(); // Adjust game difficulty
-    resetGame();     // Reset the game state
-    startGame();     // Start game logic
+    resetGame();     
+    startGame();    
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -324,8 +324,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define two background color themes
     const backgroundThemes = {
-        default: "#FFFFFF", // White
-        fresnoState: "#005A9C", // Fresno State blue
+        default: "#FFFFFF", 
+        fresnoState: "#005A9C", 
     };
 
     let currentBackgroundTheme = "default";
@@ -338,4 +338,3 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.backgroundColor = backgroundThemes[currentBackgroundTheme];
     });
 });
-

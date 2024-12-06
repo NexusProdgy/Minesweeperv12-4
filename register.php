@@ -4,8 +4,8 @@ session_start();
 
 // Database configuration
 $host = 'localhost';
-$username_db = 'jayescareno22'; // Database username
-$password_db = 'password1'; // Database password
+$username_db = 'root'; // Database username
+$password_db = ''; // Database password
 $database = 'minesweeper_game'; // Database name
 
 // Establish a database connection
